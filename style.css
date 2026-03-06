@@ -506,22 +506,107 @@ footer {
 .fu.d2 { animation-delay: .24s; }
 
 /* ── RESPONSIVE ── */
+/* ═══════════════════════════════════
+   HAMBURGER — desktop : caché
+═══════════════════════════════════ */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--dkgreen);
+  padding: 4px 8px;
+  line-height: 1;
+}
+
 @media (max-width: 900px) {
-  nav { padding: 10px 20px; }
-  nav ul { gap: 20px; }
-  nav ul a { font-size: 13px; }
-  .section-wrap { padding: 48px 24px; }
-  #accueil { padding: 0 24px 140px; }
+  /* ── NAV MOBILE ── */
+  nav {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    position: relative;
+  }
+  .nav-hamburger {
+    display: block;
+    order: 3;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    order: 4;
+    gap: 0;
+    background: var(--cream);
+    padding: 8px 0 12px;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  nav ul li {
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--sand);
+  }
+  nav ul a { font-size: 15px; }
+  .nav-cta { order: 2; }
+
+  /* ── GENERAL ── */
+  .section-wrap { padding: 48px 16px; }
+  #accueil { padding: 0 16px 140px; }
+
+  /* ── PROJETS : pills en 2 colonnes ── */
+  .proj-pills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ── PROJECT CARD ── */
   .project-card { flex-direction: column; }
   .proj-img-wrap { width: 100%; height: 220px; }
+
+  /* ── EVENT ── */
   .event-card { flex-direction: column; }
   .event-img-wrap { width: 100%; height: 240px; }
-  .contact-dome { border-radius: 30% 30% 0 0 / 70px 70px 0 0; padding: 70px 24px 48px; }
-  footer { padding: 32px 24px; }
-  .footer-inner { gap: 40px; }
+
+  /* ── CAROUSEL : empêche le débordement ── */
+  .carousel-wrap,
+  .event-card,
+  .carousel-track-wrap {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+  .carousel-track {
+    width: 100%;
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* ── CONTACT ── */
+  .contact-dome { border-radius: 30% 30% 0 0 / 70px 70px 0 0; padding: 70px 16px 48px; }
+
+  /* ── FOOTER ── */
+  footer { padding: 32px 16px; }
+  .footer-inner {
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  /* ── GALERIE ── */
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .g-3, .g-5 { grid-column: span 1; grid-row: span 1; }
+
+  /* ── PARTENAIRES ── */
   .partners-row { flex-wrap: wrap; }
+
+  /* ── GABON GRID ── */
+  .gabon-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 /* ═══════════════════════════════════

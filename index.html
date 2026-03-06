@@ -453,41 +453,43 @@ Le Gabon, avec ses forêts immenses, ses côtes sauvages et sa biodiversité exc
       Un Cœur En Vert est un projet collectif qui grandit grâce aux rencontres et aux personnes engagées.
     </p>
 
-      <form action="https://formsubmit.co/uncoeurenvert@gmail.com" method="POST">
+
+    <form action="https://formsubmit.co/uncoeurenvert@gmail.com" method="POST">
 
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="Nouveau message depuis le site">
 
       <div class="contact-form-wrap">
 
-      <label class="cf-label">Nom complet :</label>
+        <label class="cf-label">Nom complet :</label>
 
-      <div class="cf-row">
-      <div>
-      <input class="cf-input" type="text" name="nom" placeholder="Nom" required>
-      </div>
+        <div class="cf-row">
+          <div>
+            <label class="cf-label-sr" for="nom">Nom</label>
+            <input class="cf-input" type="text" id="nom" name="nom" placeholder="Nom" required>
+          </div>
+          <div>
+            <label class="cf-label-sr" for="prenom">Prénom</label>
+            <input class="cf-input" type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+          </div>
+        </div>
 
-      <div>
-      <input class="cf-input" type="text" name="prenom" placeholder="Prénom" required>
-      </div>
-      </div>
+        <div class="cf-field">
+          <label class="cf-label" for="email">Votre mail :</label>
+          <input class="cf-input" type="email" id="email" name="email" placeholder="Email" required>
+        </div>
 
-      <div class="cf-field">
-      <label class="cf-label">Votre mail :</label>
-      <input class="cf-input" type="email" name="email" placeholder="Email" required>
-      </div>
+        <div class="cf-field">
+          <label class="cf-label" for="message">Votre message :</label>
+          <textarea class="cf-input cf-textarea" id="message" name="message" placeholder="Message" required></textarea>
+        </div>
 
-      <div class="cf-field">
-      <label class="cf-label">Votre message :</label>
-      <textarea class="cf-input cf-textarea" name="message" placeholder="Message" required></textarea>
-      </div>
-
-      <div class="cf-submit">
-      <button class="btn btn-green" type="submit">Envoyer</button>
-      </div>
+        <div class="cf-submit">
+          <button class="btn btn-green" type="submit" aria-label="Envoyer le formulaire de contact">Envoyer</button>
+        </div>
 
       </div>
-      </form>
+    </form>
 
     <div class="contact-infos">
       <div class="ci">
@@ -534,7 +536,7 @@ Le Gabon, avec ses forêts immenses, ses côtes sauvages et sa biodiversité exc
       <div class="footer-ig">
         <img loading="lazy" src="photo_web/Vector.webp" alt="instagram vert">
       <div class="ci">
-        <a href="https://instagram.com/un_coeur_en_vert" target="_blank" rel="noopener">@un_coeur_en_vert</a>
+        <a href="https://instagram.com/un_coeur_en_vert" target="_blank" rel="noopener">@un_coeur_en_vert</a><br><br>
       </div>
       </div>
     </div>

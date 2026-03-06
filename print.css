@@ -1,0 +1,67 @@
+/* ═══════════════════════════════════════
+   PRINT.CSS — Un Cœur en Vert
+   Chargé uniquement à l'impression
+═══════════════════════════════════════ */
+
+/* Fond blanc, texte noir partout */
+*, *::before, *::after {
+  background: #fff !important;
+  color: #000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Cacher les éléments inutiles à l'impression */
+nav,
+footer,
+.btn,
+.proj-pills,
+.carousel-btn,
+.carousel-dots,
+.partners-track-wrap,
+#partenaires,
+#gabon,
+#galerie,
+#contact,
+#evenement,
+#soutenir,
+.sep-green,
+.sep-brown,
+.nav-hamburger,
+.nav-cta {
+  display: none !important;
+}
+
+/* Pas de background-image sur le hero */
+#accueil {
+  background-image: none !important;
+  min-height: auto !important;
+  padding: 20px 0 !important;
+}
+
+/* Sections sans padding excessif */
+section, .section-wrap {
+  padding: 16px 0 !important;
+}
+
+/* Images : pas de coupure de page */
+img {
+  max-width: 100% !important;
+  page-break-inside: avoid;
+}
+
+/* Titres lisibles */
+h1, h2, h3, .section-title, .hero-quote {
+  color: #000 !important;
+}
+
+/* Cards projets en colonne */
+.project-card {
+  flex-direction: column !important;
+  page-break-inside: avoid;
+}
+
+/* Footer simple pour impression */
+@page {
+  margin: 1.5cm;
+}

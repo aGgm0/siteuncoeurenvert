@@ -6,534 +6,8 @@
 <title>Un Cœur en Vert</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600&family=Sansita:wght@800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
-<style>
-/* ── RESET & BASE ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --cream:    #FCF9F7;
-  --brown:    #6F4D38;
-  --dkgreen:  #2D4A2D;
-  --mdgreen:  #4A7C4A;
-  --ltgreen:  #6BA75A;
-  --sand:     #CBB89D;
-  --sandbg:   rgba(203,184,157,0.20);
-  --black:    #050505;
-}
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Archivo', sans-serif;
-  background: var(--cream);
-  color: var(--black);
-  overflow-x: hidden;
-  width: 100%;
-}
-img { display: block; max-width: 100%; }
-
-/* ── BOUTONS ── */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 18px 28px; border-radius: 36px;
-  font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 18px;
-  cursor: pointer; text-decoration: none; border: none;
-  transition: filter .2s, transform .15s;
-  white-space: nowrap;
-}
-.btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
-.btn-green  { background: var(--mdgreen); color: var(--cream); }
-.btn-brown  { background: var(--brown);   color: var(--cream); }
-.btn-ltgreen { background: var(--ltgreen); color: var(--cream); }
-
-/* ── NAV ── */
-nav {
-  position: sticky; top: 0; z-index: 200;
-  background: var(--cream);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 28px;
-  box-shadow: 0 2px 12px rgba(0,0,0,.08);
-}
-.nav-logo {
-  width: 150px; height: 150px; flex-shrink: 0;
-  border-radius: 50%; border: none;
-  background: var(--cream);
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-}
-.nav-logo svg { width: 100px; height: 100px; }
-nav ul { list-style: none; display: flex; gap: 54px; flex: 1; justify-content: center; }
-nav ul a {
-  text-decoration: none; color: var(--black);
-  font-size: 18px; font-weight: 600;
-  transition: color .2s;
-}
-nav ul a:hover { color: var(--mdgreen); }
-
-/* ── HERO ── */
-#accueil {
-  position: relative;
-  background: var(--cream);
-  background-image: url('photo_web/Hero.webp'); background-size: cover; background-position: center top;
-  min-height: 680px;
-  overflow: hidden;
-  display: flex; align-items: flex-end;
-  padding: 250px 60px 60px;
-}
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 680px;
-  display: flex; flex-direction: column; gap: 18px;
-}
-.hero-quote {
-  font-family: 'Sansita', sans-serif;
-  font-size: clamp(28px, 3.8vw, 64px);
-  font-weight: 800;
-  color: var(--brown);
-}
-.hero-sub {
-  font-size: 17px; font-weight: 600; color: var(--black);
-  line-height: 1.6; max-width: 560px;
-}
-/* ── SECTION COMMUNE ── */
-.section-wrap { width: 100%; padding: 60px 80px; }
-.section-title {
-  font-size: clamp(22px, 2.5vw, 34px);
-  font-weight: 300; color: var(--brown);
-}
-.section-title.center { text-align: center; }
-.section-title.white  { color: var(--cream); }
-.section-title.green  { color: var(--mdgreen); }
-
-/* ── INTRO VALEURS ── */
-#intro { background: var(--cream); text-align: center; }
-.intro-tagline {
-  font-size: 16px; line-height: 1.75;
-  max-width: 860px; margin: 0 auto 48px;
-  color: var(--black);
-}
-.values-row {
-  display: flex; justify-content: center; gap: 48px;
-  flex-wrap: wrap; margin-bottom: 48px;
-  align-items: center;
-}
-.val-card:nth-child(1),
-.val-card:nth-child(3) {
-  margin-top: 40px;
-}
-.val-card {
-  background: var(--brown); border-radius: 20px;
-  padding: 24px 20px; width: 290px; color: var(--cream);
-  text-align: center;
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-}
-.val-card .v-icon { font-size: 40px; line-height: 1; }
-.val-card h3 { font-size: 26px; font-weight: 300; }
-.val-card p  { font-size: 15px; line-height: 1.65; }
-.sep-brown {
-  border: none; border-top: 6px solid var(--brown);
-  width: 68%; margin: 0 auto;
-}
-
-/* ── QUI SOMMES-NOUS ── */
-#qui { background: var(--sandbg); }
-#qui .section-title { margin-bottom: 36px; }
-.team-grid {
-  display: flex; justify-content: center; gap: 88px; flex-wrap: wrap;
-}
-.team-card {
-  background: var(--sand); border-radius: 20px;
-  padding: 20px; width: 300px; text-align: center;
-}
-.team-photo {
-  width: 100%; height: 280px; border-radius: 10px;
-  background: #b8a08a; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 14px;
-}
-.team-photo img { width: 100%; height: 100%; object-fit: cover; }
-.team-card h3 { font-size: 20px; font-weight: 300; color: var(--black); margin-bottom: 6px; }
-.team-card p  { font-size: 15px; font-weight: 600; color: var(--black); line-height: 1.4; }
-
-/* ── SÉPARATEUR VERT ── */
-.sep-green { border: none; border-top: 6px solid var(--ltgreen); width: 100%; }
-
-/* ── PROJETS ── */
-#projets { background: var(--dkgreen); }
-#projets .section-title { margin-bottom: 12px; }
-.proj-subtitle {
-  text-align: center; color: var(--cream);
-  font-size: 16px; line-height: 1.7;
-  max-width: 820px; margin: 0 auto 36px;
-}
-/* Card projet */
-.project-card {
-  display: none;
-  background: var(--cream); border-radius: 20px;
-  padding: 28px 28px;
-  max-width: 1300px; margin: 0 auto;
-  flex-direction: row; align-items: center; gap: 32px;
-}
-.project-card.active { display: flex; }
-.proj-img-wrap {
-  flex-shrink: 0; width: 480px; height: 400px;
-  border-radius: 10px; overflow: hidden;
-  background: #d4cfc9;
-  display: flex; align-items: top; justify-content: center;
-}
-.proj-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.img-placeholder-label {
-  font-size: 12px; color: rgba(0,0,0,.3); font-style: italic; text-align: center; padding: 8px;
-}
-.proj-body { flex: 1; display: flex; flex-direction: column; gap: 16px; }
-.proj-body h3 { font-size: 24px; font-weight: 300; color: var(--brown); }
-.proj-body .proj-desc { font-size: 15px; line-height: 1.75; color: var(--black); }
-.proj-meta-row { display: flex; gap: 28px; flex-wrap: wrap; padding-top: 8px; }
-.pm { display: flex; flex-direction: column; gap: 6px; }
-.pm .label { font-size: 22px; font-weight: 300; color: var(--ltgreen); }
-.pm .val   { font-size: 14px; color: var(--black); line-height: 1.5; }
-
-/* Pills navigation */
-.proj-pills {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  margin: 16px auto 0;
-  max-width: 1300px; /* même max-width que .project-card */
-}
-.pill {
-  background: var(--cream); color: var(--brown);
-  border: none; border-radius: 16px;
-  padding: 16px 10px;
-  font-family: 'Archivo', sans-serif; font-size: 16px; font-weight: 400;
-  cursor: pointer; text-align: center; line-height: 1.4;
-  transition: background .2s, color .2s;
-  width: 100%;
-}
-.pill strong { display: block; font-size: 14px; font-weight: 400; opacity: .7; margin-bottom: 4px; }
-.pill.active, .pill:hover { background: var(--ltgreen); color: var(--cream); }
-
-/* ── EVENEMENT ── */
-#evenement { background: var(--mdgreen); }
-#evenement .section-title { margin-bottom: 32px; }
-.event-card {
-  background: var(--cream); border-radius: 20px;
-  padding: 28px; max-width: 1200px; margin: 0 auto;
-  display: flex; gap: 40px; align-items: center;
-}
-.event-img-wrap {
-  flex-shrink: 0; width: 440px; height: 420px;
-  border-radius: 10px; overflow: hidden;
-  background: #d4cfc9;
-  display: flex; align-items: center; justify-content: center;
-}
-.event-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.event-body { flex: 1; display: flex; flex-direction: column; gap: 18px; }
-.event-body h3 { font-size: 28px; font-weight: 300; color: var(--brown); }
-.event-body p  { font-size: 15px; line-height: 1.75; color: var(--black); }
-
-/* ── PARTENAIRES ── */
-#partenaires { background: var(--cream); }
-#partenaires .section-title { margin-bottom: 32px; }
-.partners-track-wrap {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-/* masque les bords avec un fondu */
-.partners-track-wrap::before,
-.partners-track-wrap::after {
-  content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
-}
-.partners-track-wrap::before { left: 0;  background: linear-gradient(to right, var(--cream), transparent); }
-.partners-track-wrap::after  { right: 0; background: linear-gradient(to left,  var(--cream), transparent); }
-.partners-track {
-  display: flex; gap: 20px; align-items: center;
-  animation: scroll-partners 22s linear infinite;
-  width: max-content;
-  will-change: transform;
-}
-.partners-track:hover { animation-play-state: paused; }
-@keyframes scroll-partners {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.partner-item {
-  flex-shrink: 0; width: calc((100vw - 160px) / 5);
-  max-width: 200px; min-width: 120px;
-  height: 120px; padding: 10px;
-  display: flex; align-items: center; justify-content: center;
-}
-.partner-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
-.partner-placeholder {
-  width: 100%; height: 100%;
-  background: #ede9e4; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; color: #aaa; text-align: center; padding: 8px;
-  border: 2px dashed rgba(0,0,0,.1);
-}
-
-/* ── SOUTENIR ── */
-#soutenir { background: var(--sandbg); }
-#soutenir .section-title { margin-bottom: 12px; }
-.soutenir-sub {
-  font-size: 16px; line-height: 1.75; max-width: 800px;
-  margin: 0 auto 40px; text-align: center; color: var(--black);
-}
-.don-grid {
-  display: flex; justify-content: center; gap: 64px; flex-wrap: wrap;
-}
-.don-card {
-  background: var(--brown); border-radius: 20px;
-  padding: 20px; width: 340px;
-  color: var(--cream); text-align: left;
-  display: flex; flex-direction: column; gap: 14px;
-}
-.don-img-wrap {
-  width: 100%; height: 200px; border-radius: 10px;
-  overflow: hidden; background: #9e7d63;
-  display: flex; align-items: center; justify-content: center;
-}
-.don-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.don-card h3 { font-size: 22px; font-weight: 300; }
-.don-card p  { font-size: 14px; line-height: 1.65; flex: 1; }
-.don-card .price { font-size: 30px; font-weight: 300; }
-.don-card .btn { align-self: flex-start; font-size: 15px; padding: 10px 22px; }
-
-/* ── GALERIE ── */
-#galerie { background: var(--cream); }
-#galerie .section-title { margin-bottom: 28px; }
-/* Grille bento fidèle à la maquette Figma : 4 colonnes, 2 rangées */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 220px 220px;
-  gap: 10px;
-  max-width: 1100px; margin: 0 auto;
-}
-.g {
-  border-radius: 14px; overflow: hidden;
-  background: #d4cfc9;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px; color: #aaa; font-style: italic;
-}
-.g img { width: 100%; height: 100%; object-fit: cover; }
-/* Positions exactes de la maquette */
-.g-1  { grid-column: 1; grid-row: 1; }               /* petit carré haut gauche 1 */
-.g-2  { grid-column: 2; grid-row: 1; }               /* petit carré haut gauche 2 */
-.g-3  { grid-column: 3 / span 2; grid-row: 1; }      /* large haut droite */
-.g-4  { grid-column: 1; grid-row: 2; }               /* bas gauche 1 */
-.g-5  { grid-column: 2; grid-row: 1 / span 2; }      /* haut + bas milieu (tall) */
-.g-6  { grid-column: 3; grid-row: 2; }               /* bas milieu */
-.g-7  { grid-column: 4; grid-row: 2; }               /* bas droite */
-/* re-map pour approcher la maquette : */
-/* rangée 1 : [petit] [wide 2col] [petit] */
-/* rangée 2 : [tall 2row] [petit] [wide 2col] */
-
-/* ── CONTACT ── */
-#contact { background: var(--cream); padding: 0; overflow: hidden; }
-.contact-dome {
-  background: var(--mdgreen);
-  border-radius: 100% 100% 0 0 / 1500px 1500px 0 0;
-  padding: 160px 80px 80px;
-  text-align: center;
-}
-.contact-dome .section-title { margin-bottom: 14px; }
-.contact-intro {
-  color: var(--cream); font-size: 16px; line-height: 1.75;
-  max-width: 660px; margin: 0 auto 36px;
-}
-/* Formulaire */
-.contact-form-wrap {
-  background: var(--sand); border-radius: 20px;
-  padding: 28px 28px;
-  max-width: 680px; margin: 0 auto 36px;
-  text-align: left;
-}
-.cf-label {
-  display: block; color: var(--cream);
-  font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 15px;
-  margin-bottom: 7px;
-}
-.cf-row { display: flex; gap: 12px; margin-bottom: 16px; }
-.cf-row > div { flex: 1; }
-.cf-field { margin-bottom: 16px; }
-.cf-input {
-  width: 100%; padding: 12px 14px;
-  border-radius: 10px; border: none;
-  background: var(--cream);
-  font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--brown);
-  outline: none;
-}
-.cf-textarea { height: 130px; resize: vertical; }
-.cf-submit { display: flex; justify-content: flex-end; margin-top: 10px; }
-/* Infos contact */
-.contact-infos {
-  display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
-  max-width: 760px; margin: 0 auto;
-}
-.ci { text-align: center; color: var(--cream); }
-.ci strong { display: block; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-.ci span, .ci a { font-size: 15px; line-height: 1.75; color: var(--cream); text-decoration: none; }
-.ci a:hover { text-decoration: underline; }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--dkgreen);
-  border-top: 6px solid var(--ltgreen);
-  padding: 48px 80px;
-}
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  gap: 60px;
-  max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
-  align-items: start;
-}
-/* Colonne 2 et 3 : padding pour ne pas coller aux bords */
-.footer-col-about { padding-left: 0; }
-.footer-col-nav { padding-left: 0; }
-/* Colonne 1 — logo */
-.footer-col-logo {
-  display: flex; flex-direction: column; align-items: flex-start;
-}
-
-.footer-logo-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%;}
-/* Colonne 2 — description */
-.footer-col-about {
-  display: flex; flex-direction: column; gap: 14px;
-}
-.footer-about {
-  color: var(--cream); font-size: 15px; line-height: 1.75;
-}
-.footer-about strong { display: block; font-size: 17px; margin-bottom: 6px; }
-.footer-ig {
-  display: flex; align-items: center; gap: 10px;
-  color: var(--cream); font-size: 15px;
-}
-.ig-badge {
-  width: 36px; height: 36px; background: var(--ltgreen);
-  border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  font-size: 18px; flex-shrink: 0;
-}
-/* Colonne 3 — liens */
-.footer-col-nav {
-  display: flex; flex-direction: column; gap: 4px;
-}
-.footer-col-nav a {
-  color: var(--cream); text-decoration: none;
-  font-size: 15px; line-height: 2.2;
-  transition: color .2s;
-}
-.footer-col-nav a:hover { color: var(--ltgreen); }
-.footer-copy { color: rgba(255,255,255,.35); font-size: 13px; margin-top: 14px; }
-/* ── NAV BRAND (logo + nom) ── */
-.nav-brand {
-  display: flex; align-items: center; gap: 14px; flex-shrink: 0;
-}
-.nav-brand-name {
-  font-family: 'Archivo', sans-serif; font-size: 20px; font-weight: 400;
-  color: var(--black); white-space: nowrap;
-}
-
-/* ── EVENT CAROUSEL ── */
-.event-carousel {
-  position: relative; flex-shrink: 0;
-  width: 440px; height: 420px;
-  border-radius: 10px; overflow: hidden;
-  background: #d4cfc9;
-}
-.event-carousel .slides { width: 100%; height: 100%; position: relative; }
-.event-carousel .slide {
-  position: absolute; inset: 0;
-  opacity: 0; transition: opacity .4s ease;
-  display: flex; align-items: center; justify-content: center;
-}
-.event-carousel .slide.active { opacity: 1; }
-.event-carousel .slide img { width: 100%; height: 100%; object-fit: cover; }
-.event-carousel .slide .ph {
-  font-size: 12px; color: rgba(0,0,0,.3); font-style: italic; text-align: center; padding: 8px;
-}
-.carousel-btn {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: rgba(252,249,247,.85); border: none; border-radius: 50%;
-  width: 38px; height: 38px; cursor: pointer; font-size: 16px;
-  display: flex; align-items: center; justify-content: center;
-  transition: background .2s; z-index: 3;
-}
-.carousel-btn:hover { background: var(--cream); }
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
-.carousel-dots {
-  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
-  display: flex; gap: 6px; z-index: 3;
-}
-.carousel-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(255,255,255,.5); border: none; cursor: pointer; padding: 0;
-  transition: background .2s;
-}
-.carousel-dot.active { background: var(--cream); }
-
-/* ── SECTION GABON ── */
-#gabon {
-  background: var(--mdgreen);
-  padding: 60px 80px;
-  text-align: center;
-}
-#gabon .gabon-title {
-  font-size: clamp(20px, 2.2vw, 30px); font-weight: 300;
-  color: var(--cream); letter-spacing: .06em;
-  margin-bottom: 20px; text-transform: uppercase;
-}
-#gabon .gabon-sub {
-  color: var(--cream); font-size: 16px; line-height: 1.75;
-  max-width: 800px; margin: 0 auto 40px;
-}
-.gabon-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  max-width: 1200px; margin: 0 auto;
-}
-.gabon-grid + .gabon-grid { margin-top: 12px; }
-.gabon-photo {
-  border-radius: 14px; overflow: hidden;
-  aspect-ratio: 291/303;
-  background: rgba(255,255,255,.12);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; color: rgba(255,255,255,.45); font-style: italic;
-}
-.gabon-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.fu   { animation: fadeUp .65s ease both; }
-.fu.d1 { animation-delay: .12s; }
-.fu.d2 { animation-delay: .24s; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  nav { padding: 10px 20px; }
-  nav ul { gap: 20px; }
-  nav ul a { font-size: 13px; }
-  .section-wrap { padding: 48px 24px; }
-  #accueil { padding: 0 24px 140px; }
-  .project-card { flex-direction: column; }
-  .proj-img-wrap { width: 100%; height: 220px; }
-  .event-card { flex-direction: column; }
-  .event-img-wrap { width: 100%; height: 240px; }
-  .contact-dome { border-radius: 30% 30% 0 0 / 70px 70px 0 0; padding: 70px 24px 48px; }
-  footer { padding: 32px 24px; }
-  .footer-inner { gap: 40px; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .g-3, .g-5 { grid-column: span 1; grid-row: span 1; }
-  .partners-row { flex-wrap: wrap; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,600;1,400&family=Sansita:wght@800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -544,7 +18,7 @@ footer {
   <!-- ╔══════════════════════════════════════════╗
        ║  LOGO NAV — pour changer :              ║
        ║  Remplace le <svg> par :                ║
-       ║  <img src="logo.png" alt="Un Cœur en Vert"> ║
+       ║  <img loading="lazy" src="logo.png" alt="Un Cœur en Vert"> ║
        ╚══════════════════════════════════════════╝ -->
   <div class="nav-brand">
     <div class="nav-logo">
@@ -552,13 +26,14 @@ footer {
     </div>
     <span class="nav-brand-name">Un Coeur En Vert</span>
   </div>
+  <button class="nav-hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">☰</button>
   <ul>
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#qui">Qui sommes nous ?</a></li>
     <li><a href="#projets">Nos projets</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://www.helloasso.com/associations/un-coeur-en-vert" class="btn btn-green">Faire un don</a>
+  <div class="nav-cta"><a href="https://www.helloasso.com/associations/un-coeur-en-vert" class="btn btn-green">Faire un don</a></div>
 </nav>
 
 <!-- ════════════════════════════════════
@@ -587,7 +62,7 @@ footer {
     <div class="val-card">
       <div class="v-icon">
         <!-- icône placeholder – remplacer par votre SVG/icône -->
-        <img src="photo_web/logomain.png" alt="deux main qui tiens un coeur" style="width:72px;height:72px;object-fit:cover;border-radius:50%;margin:4px auto;display:block;">
+        <img loading="lazy" src="photo_web/logomain.png" alt="deux main qui tiens un coeur" style="width:72px;height:72px;object-fit:cover;border-radius:50%;margin:4px auto;display:block;">
       </div>
       <h3>Solidarité</h3>
       <p>Créer du lien entre les personnes, les cultures et les générations.</p>
@@ -595,13 +70,13 @@ footer {
     <!-- Notre inspiration -->
     <div class="val-card">
       <h3>Notre inspiration</h3>
-      <img src="photo_web/Ellipse 1.webp" alt="Albert Schweitzer" style="width:72px;height:72px;object-fit:cover;border-radius:50%;margin:4px auto;display:block;">
+      <img loading="lazy" src="photo_web/Ellipse 1.webp" alt="Albert Schweitzer" style="width:72px;height:72px;object-fit:cover;border-radius:50%;margin:4px auto;display:block;">
       <p>La pensée de Albert Schweitzer inspire profondément notre démarche.<br/><br/>Son engagement au service des autres et sa philosophie du respect de toute forme de vie incarnent les valeurs que nous souhaitons transmettre.</p>
     </div>
     <!-- Respect du vivant -->
     <div class="val-card">
       <div class="v-icon">
-        <img src="photo_web/Logo.webp" alt="Albert Schweitzer" style="width:72px;height:72px;object-fit:cover;border-radius:50%;margin:4px auto;display:block;">
+        <img loading="lazy" src="photo_web/Logo.webp" alt="Albert Schweitzer" style="width:72px;height:72px;object-fit:cover;border-radius:50%;margin:4px auto;display:block;">
       </div>
       <h3>Respect du vivant</h3>
       <p>Agir pour la nature et toutes les formes de vie, avec conscience et humilité.</p>
@@ -619,7 +94,7 @@ footer {
 
     <div class="team-card">
       <div class="team-photo">
-        <img src="photo_web/Photo-8.webp" alt="EMANE N'NA Andrew">
+        <img loading="lazy" src="photo_web/Photo-8.webp" alt="EMANE N'NA Andrew">
       </div>
       <h3>EMANE N'NA Andrew</h3>
       <p>Président de l'association</p>
@@ -627,7 +102,7 @@ footer {
 
     <div class="team-card">
       <div class="team-photo">
-        <img src="photo_web/Photo-7.webp" alt="MENDES Héléna">
+        <img loading="lazy" src="photo_web/Photo-7.webp" alt="MENDES Héléna">
       </div>
       <h3>MENDES Héléna</h3>
       <p>Vice présidente de l'association</p>
@@ -635,7 +110,7 @@ footer {
 
     <div class="team-card">
       <div class="team-photo">
-        <img src="photo_web/Photo-6.webp" alt="ALIHANGA Dia">
+        <img loading="lazy" src="photo_web/Photo-6.webp" alt="ALIHANGA Dia">
       </div>
       <h3>ALIHANGA Dia</h3>
       <p>Chargé des partenariats<br/>et du développement</p>
@@ -653,85 +128,86 @@ footer {
   <h2 class="section-title center white" style="margin-bottom:12px;">Nos projets &amp; collaborations</h2>
   <p class="proj-subtitle">Des initiatives éducatives, culturelles et environnementales menées entre la France et le Gabon pour créer du lien et agir concrètement.</p>
 
-  <!-- Projet 0 : Atelier de poésie (affiché par défaut) -->
-  <div class="project-card active" id="proj-0">
-    <div class="proj-img-wrap">
-      <img src="photo_web/Photo-10.webp" alt="Atelier de poésie">
-    </div>
-    <div class="proj-body">
-      <h3>L'atelier de poésie - École primaire</h3>
-      <p class="proj-desc">Des ateliers d'écriture et de slam poésie animés dans les écoles primaires d'Angers et Nantes. Favoriser l'expression orale, la créativité et la confiance en soi à travers les mots et la langue française.</p>
-      <div class="proj-meta-row">
-        <div class="pm"><span class="label">Où ?</span><span class="val">France<br/>À Angers et Nantes</span></div>
-        <div class="pm"><span class="label">Catégorie</span><span class="val">Éducation</span></div>
-        <div class="pm"><span class="label">Objectif</span><span class="val">Expression artistique<br/>&amp; pédagogie</span></div>
-      </div>
+<!-- Projet 0 : Atelier de poésie (affiché par défaut) -->
+<div class="project-card active" id="proj-0">
+  <div class="proj-img-wrap">
+    <img loading="lazy" src="photo_web/Photo-10.webp" alt="Atelier de poésie">
+  </div>
+  <div class="proj-body">
+    <h3>L'atelier de poésie - École primaire</h3>
+    <p class="proj-desc">Les ateliers de poésie ont pour objectif d'ouvrir les jeunes à d'autres cultures tout en les sensibilisant très tôt aux enjeux humains et environnementaux. À travers ces rencontres, les enfants découvrent notamment le Gabon et l'histoire d'Albert Schweitzer, figure humaniste qui a marqué la relation entre l'Europe et l'Afrique.<br/><br/>Animés notamment par Dia, artiste et slameur engagé au sein de l'association, ces ateliers invitent les élèves à participer activement : écriture de textes, poésie orale, jeux pédagogiques et échanges autour des thématiques abordées.<br/><br/>Au-delà de la poésie, ces moments sont aussi l'occasion de développer des compétences psychosociales dès le plus jeune âge. Les enfants apprennent à exprimer leurs émotions, à écouter les autres et à prendre la parole.<br/><br/>L'objectif est de remettre la sensibilité et le lien au cœur de l'éducation, afin de cultiver une forme d'« écologie du mental ».</p>
+    <div class="proj-meta-row">
+      <div class="pm"><span class="label">Où ?</span><span class="val">France<br/>Angers / Nantes</span></div>
+      <div class="pm"><span class="label">Catégorie</span><span class="val">Éducation populaire<br/>à l'environnement</span></div>
+      <div class="pm"><span class="label">Objectif</span><span class="val">Remettre la sensibilité<br/>à la relation au cœur<br/>de l'éducation.</span></div>
     </div>
   </div>
+</div>
 
-  <!-- Projet 1 : Distribution vêtements -->
-  <div class="project-card" id="proj-1">
-    <div class="proj-img-wrap">
-      <img src="photo_web/Galerie photo-3.webp" alt="Distribution de vêtements">
-    </div>
-    <div class="proj-body">
-      <h3>Distribution de vêtements</h3>
-      <p class="proj-desc">Collecte et redistribution de vêtements de seconde main destinés aux familles dans le besoin dans le quartier de Dibandi, au Gabon. Une démarche à la fois humanitaire et écologique.</p>
-      <div class="proj-meta-row">
-        <div class="pm"><span class="label">Où ?</span><span class="val">Gabon<br/>À Dibandi</span></div>
-        <div class="pm"><span class="label">Catégorie</span><span class="val">Humanitaire<br/>Environnementale</span></div>
-        <div class="pm"><span class="label">Objectif</span><span class="val">Donner une seconde vie<br/>aux vêtements. Soutien<br/>vestimentaire aux familles.</span></div>
-      </div>
+<!-- Projet 1 : Distribution vêtements -->
+<div class="project-card" id="proj-1">
+  <div class="proj-img-wrap">
+    <img loading="lazy" src="photo_web/Galerie photo-3.webp" alt="Distribution de vêtements">
+  </div>
+  <div class="proj-body">
+    <h3>Distribution de vêtements</h3>
+    <p class="proj-desc">Un Cœur en Vert organise des collectes et des distributions de vêtements afin d'apporter une aide concrète aux personnes en situation de précarité. Ces actions reposent sur une idée simple : donner une seconde vie à des vêtements tout en répondant à des besoins essentiels.<br/><br/>Consciente des enjeux environnementaux liés à l'industrie textile, l'association fait le choix d'un équilibre entre écologie et solidarité. Offrir des vêtements, même usagés, permet d'améliorer le quotidien de nombreuses personnes et de préserver leur dignité.<br/><br/>Dans l'esprit d'Un Cœur en Vert, l'écologie ne se limite pas à la protection de la nature : elle implique aussi de prendre soin des êtres humains et d'agir, avec les moyens disponibles, pour soutenir les populations qui en ont besoin.</p>
+    <div class="proj-meta-row">
+      <div class="pm"><span class="label">Où ?</span><span class="val">France – Gabon</span></div>
+      <div class="pm"><span class="label">Catégorie</span><span class="val">Solidarité internationale</span></div>
+      <div class="pm"><span class="label">Objectif</span><span class="val">Apporter une aide matérielle<br/>tout en conciliant humanitaire<br/>et conscience environnementale.</span></div>
     </div>
   </div>
+</div>
 
-  <!-- Projet 2 : Plages propres -->
-  <div class="project-card" id="proj-2">
-    <div class="proj-img-wrap">
-      <img src="photo_web/Galerie photo-9.webp" alt="Opération plages propres">
-    </div>
-    <div class="proj-body">
-      <h3>Opération plages propres</h3>
-      <p class="proj-desc">Nettoyage des plages à Cap Esterias au Gabon pour protéger l'environnement marin et sensibiliser les communautés locales aux enjeux écologiques côtiers.</p>
-      <div class="proj-meta-row">
-        <div class="pm"><span class="label">Où ?</span><span class="val">Gabon<br/>Cap Esterias</span></div>
-        <div class="pm"><span class="label">Catégorie</span><span class="val">Environnementale</span></div>
-        <div class="pm"><span class="label">Objectif</span><span class="val">Protéger<br/>l'environnement marin</span></div>
-      </div>
+<!-- Projet 2 : Plages propres -->
+<div class="project-card" id="proj-2">
+  <div class="proj-img-wrap">
+    <img loading="lazy" src="photo_web/Galerie photo-9.webp" alt="Opération plages propres">
+  </div>
+  <div class="proj-body">
+    <h3>Opération plages propres</h3>
+    <p class="proj-desc">Nettoyage des plages à Cap Esterias au Gabon pour protéger l'environnement marin et sensibiliser les communautés locales aux enjeux écologiques côtiers.</p>
+    <div class="proj-meta-row">
+      <div class="pm"><span class="label">Où ?</span><span class="val">Gabon<br/>Cap Esterias</span></div>
+      <div class="pm"><span class="label">Catégorie</span><span class="val">Environnementale</span></div>
+      <div class="pm"><span class="label">Objectif</span><span class="val">Protéger<br/>l'environnement marin</span></div>
     </div>
   </div>
+</div>
 
-  <!-- Projet 3 : Dico-Dibandi -->
-  <div class="project-card" id="proj-3">
-    <div class="proj-img-wrap">
-      <img src="photo_web/Photo-2.webp" alt="Opération Dico-Dibandi">
-    </div>
-    <div class="proj-body">
-      <h3>Opération Dico-Dibandi</h3>
-      <p class="proj-desc">Collecte et envoi de dictionnaires de français (niveau primaire, neufs ou d'occasion) à destination d'une école de village Pygmées à Dibandi, dans le sud du Gabon.</p>
-      <div class="proj-meta-row">
-        <div class="pm"><span class="label">Où ?</span><span class="val">Gabon<br/>À Dibandi</span></div>
-        <div class="pm"><span class="label">Catégorie</span><span class="val">Humanitaire</span></div>
-        <div class="pm"><span class="label">Objectif</span><span class="val">Favoriser l'éducation</span></div>
-      </div>
+<!-- Projet 3 : Dico-Dibandi -->
+<div class="project-card" id="proj-3">
+  <div class="proj-img-wrap">
+    <img loading="lazy" src="photo_web/Photo-2.webp" alt="Opération Dico-Dibandi">
+  </div>
+  <div class="proj-body">
+    <h3>Opération Dico-Dibandi</h3>
+    <p class="proj-desc">L'opération Dico-Dibandi vise à soutenir l'éducation en fournissant des dictionnaires et des livres à des écoles situées dans des territoires où l'accès aux ressources pédagogiques reste limité. Cette action s'adresse notamment à des villages de l'intérieur du pays, comme Dibandi, où vivent certaines communautés pygmées.<br/><br/>À travers l'envoi de dictionnaires et d'ouvrages scolaires, l'association souhaite encourager la lecture et l'ouverture au monde. Le livre devient alors un véritable outil de transmission et d'émancipation.<br/><br/>Au-delà du soutien matériel, cette initiative crée un lien de solidarité entre celles et ceux qui donnent et celles et ceux qui reçoivent. Dans l'esprit d'Un Cœur en Vert, cette démarche place la relation humaine, l'éducation et le partage du savoir au cœur de l'action.</p>
+    <div class="proj-meta-row">
+      <div class="pm"><span class="label">Où ?</span><span class="val">Gabon – Dibandi</span></div>
+      <div class="pm"><span class="label">Catégorie</span><span class="val">Solidarité internationale<br/>/ Éducation</span></div>
+      <div class="pm"><span class="label">Objectif</span><span class="val">Favoriser l'accès aux ressources<br/>éducatives et encourager<br/>la transmission du savoir.</span></div>
     </div>
   </div>
+</div>
 
-  <!-- Projet 4 : Maraudes -->
-  <div class="project-card" id="proj-4">
-    <div class="proj-img-wrap">
-      <img src="photo_web/Galerie photo-2.webp" alt="Maraudes alimentaires">
-    </div>
-    <div class="proj-body">
-      <h3>Maraudes alimentaires</h3>
-      <p class="proj-desc">Distribution régulière de repas et denrées alimentaires aux personnes en situation de précarité dans les rues d'Angers. Un engagement local fort pour lutter contre la faim et l'exclusion sociale.</p>
-      <div class="proj-meta-row">
-        <div class="pm"><span class="label">Où ?</span><span class="val">France<br/>À Angers</span></div>
-        <div class="pm"><span class="label">Catégorie</span><span class="val">Humanitaire</span></div>
-        <div class="pm"><span class="label">Objectif</span><span class="val">Lutter contre la faim</span></div>
-      </div>
+<!-- Projet 4 : Maraudes -->
+<div class="project-card" id="proj-4">
+  <div class="proj-img-wrap">
+    <img loading="lazy" src="photo_web/Galerie photo-2.webp" alt="Maraudes alimentaires">
+  </div>
+  <div class="proj-body">
+    <h3>Maraudes alimentaires</h3>
+    <p class="proj-desc">Les maraudes alimentaires s'inscrivent dans la volonté de l'association de préserver et recréer du lien social. Dans une société où tout va plus vite et où l'on nous demande souvent d'être performants, distants ou froids, ces actions permettent au contraire de remettre la relation humaine au centre.<br/><br/>À travers des distributions alimentaires et des moments d'échange, les bénévoles vont à la rencontre des personnes dans le besoin. L'objectif n'est pas seulement d'apporter une aide matérielle, mais aussi de créer un moment de dialogue, d'écoute et de présence, afin de retisser du lien entre les personnes.<br/><br/>Pour Un Cœur en Vert, apporter à manger est important, mais ce n'est qu'une partie de l'action. Derrière chaque maraude, il y a une philosophie : celle de prendre le temps de rencontrer l'autre, de reconnaître sa dignité et de rappeler que la solidarité ne se limite pas à donner, mais aussi à être présent.</p>
+    <blockquote style="font-size:15px;font-weight:600;color:var(--brown);border-left:3px solid var(--ltgreen);padding-left:14px;margin:4px 0;">« Apporter à manger est essentiel, mais pour nous la solidarité passe aussi par la rencontre, l'écoute et le lien humain »</blockquote>
+    <div class="proj-meta-row">
+      <div class="pm"><span class="label">Où ?</span><span class="val">France<br/>À Angers</span></div>
+      <div class="pm"><span class="label">Catégorie</span><span class="val">Solidarité sociale</span></div>
+      <div class="pm"><span class="label">Objectif</span><span class="val">Recréer du lien social et favoriser<br/>la rencontre avec les personnes<br/>en situation de précarité.</span></div>
     </div>
   </div>
+</div>
 
   <!-- PILLS EN BAS — fidèles au Figma -->
   <div class="proj-pills">
@@ -766,16 +242,16 @@ footer {
     <div class="event-carousel" id="eventCarousel">
       <div class="slides">
         <div class="slide active">
-          <img src="photo_web/IMG_7168 1.webp" alt="Foire de Paris">
+          <img loading="lazy" src="photo_web/IMG_7168 1.webp" alt="Foire de Paris">
         </div>
         <div class="slide">
-          <img src="photo_web/Galerie photo.webp" alt="Foire de Paris">
+          <img loading="lazy" src="photo_web/Galerie photo.webp" alt="Foire de Paris">
         </div>
         <div class="slide">
-          <img src="photo_web/Galerie photo-1.webp" alt="Foire de Paris">
+          <img loading="lazy" src="photo_web/Galerie photo-1.webp" alt="Foire de Paris">
         </div>
         <div class="slide">
-          <img src="photo_web/Photo.webp" alt="Foire de Paris">
+          <img loading="lazy" src="photo_web/Photo.webp" alt="Foire de Paris">
         </div>
       </div>
       <button class="carousel-btn prev" onclick="carouselMove(-1)">&#8592;</button>
@@ -809,25 +285,26 @@ footer {
   <h2 class="gabon-title">Le Gabon fait naître Un Cœur En Vert</h2>
   <p class="gabon-sub">
     <!-- Ajouter votre texte de présentation ici -->
-    texte
+Le Gabon, avec ses forêts immenses, ses côtes sauvages et sa biodiversité exceptionnelle, est bien plus qu'un pays — c'est une source d'inspiration profonde. C'est de cette terre, de ses valeurs de partage et de son rapport unique au vivant, qu'est née l'idée d'Un Cœur en Vert.
+<br><br>Fondée sur un lien fort entre la France et le Gabon, l'association puise dans cette richesse humaine et naturelle pour construire des projets qui ont du sens. Parce que prendre soin de la nature et prendre soin des hommes, c'est le même combat.
   </p>
 
-  <!-- Rangée 1 — 5 photos. Remplacer les placeholders par <img src="...webp" alt=""> -->
+  <!-- Rangée 1 — 5 photos. Remplacer les placeholders par <img loading="lazy" src="...webp" alt=""> -->
   <div class="gabon-grid">
-    <div class="gabon-photo"><img src="photo_web/Rectangle 5.webp" alt="Gabon"></div>
-    <div class="gabon-photo"><img src="photo_web/Rectangle 6.webp" alt="Gabon"></div>
-    <div class="gabon-photo"><img src="photo_web/Rectangle 7.webp" alt="Gabon"></div>
-    <div class="gabon-photo"><img src="photo_web/Rectangle 8.webp" alt="Gabon"></div>
-    <div class="gabon-photo"><img src="photo_web/Rectangle 9.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 5.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 6.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 7.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 8.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 9.webp" alt="Gabon"></div>
   </div>
 
   <!-- Rangée 2 — 5 photos -->
   <div class="gabon-grid">
-    <div class="gabon-photo"><img src="photo_web/Rectangle 5-1.webp" alt="Gabon"></div>
-    <div class="gabon-photo"><img src="photo_web/Rectangle 6-1.webp" alt="Gabon"></div>
-    <div class="gabon-photo"><img src="photo_web/Rectangle 7-1.webp" alt="Gabon"></div>
-    <div class="gabon-photo"><img src="photo_web/Rectangle 8-1.webp" alt="Gabon"></div>
-    <div class="gabon-photo"><img src="photo_web/Rectangle 9-1.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 5-1.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 6-1.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 7-1.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 8-1.webp" alt="Gabon"></div>
+    <div class="gabon-photo"><img loading="lazy" src="photo_web/Rectangle 9-1.webp" alt="Gabon"></div>
   </div>
 </section>
 
@@ -838,32 +315,33 @@ footer {
 ════════════════════════════════════ -->
 <section class="section-wrap" id="partenaires" style="background:var(--cream);">
   <h2 class="section-title center green" style="margin-bottom:28px;">Nos partenaires</h2>
-  <!-- Pour remplacer les logos : mettre <img src="logo.png" alt="Nom"> dans chaque .partner-item -->
+  <!-- Pour remplacer les logos : mettre <img loading="lazy" src="logo.png" alt="Nom"> dans chaque .partner-item -->
   <!-- IMPORTANT : dupliquer la même liste en série 2 pour le défilement infini -->
   <div class="partners-track-wrap">
     <div class="partners-track">
       <!-- Série 1 -->
-      <div class="partner-item"><img src="photo_web/logo 1.webp" alt="Partenaire 1" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 2.webp" alt="Partenaire 2" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 3.webp" alt="Partenaire 3" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 4.webp" alt="Partenaire 4" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 5.webp" alt="Partenaire 5" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 6.webp" alt="Partenaire 6" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 7.webp" alt="Partenaire 7" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 8.webp" alt="Partenaire 8" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 9.webp" alt="Partenaire 9" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 10.webp" alt="Partenaire 10" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <!-- Série 2 — copie exacte pour le loop continu -->
-      <div class="partner-item"><img src="photo_web/logo 1.webp" alt="Partenaire 1" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 2.webp" alt="Partenaire 2" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 3.webp" alt="Partenaire 3" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 4.webp" alt="Partenaire 4" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 5.webp" alt="Partenaire 5" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 6.webp" alt="Partenaire 6" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 7.webp" alt="Partenaire 7" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 8.webp" alt="Partenaire 8" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 9.webp" alt="Partenaire 9" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
-      <div class="partner-item"><img src="photo_web/logo 10.webp" alt="Partenaire 10" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 1.webp" alt="Partenaire 1" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 2.webp" alt="Partenaire 2" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 3.webp" alt="Partenaire 3" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 4.webp" alt="Partenaire 4" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 5.webp" alt="Partenaire 5" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 6.webp" alt="Partenaire 6" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 7.webp" alt="Partenaire 7" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 8.webp" alt="Partenaire 8" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 9.webp" alt="Partenaire 9" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 10.webp" alt="Partenaire 10" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <!-- Série 2 — copie pour loop continu -->
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 1.webp" alt="Partenaire 1" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 2.webp" alt="Partenaire 2" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 3.webp" alt="Partenaire 3" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 4.webp" alt="Partenaire 4" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 5.webp" alt="Partenaire 5" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 6.webp" alt="Partenaire 6" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 7.webp" alt="Partenaire 7" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 8.webp" alt="Partenaire 8" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 9.webp" alt="Partenaire 9" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+      <div class="partner-item"><img loading="lazy" src="photo_web/logo 10.webp" alt="Partenaire 10" style="max-width:100%;max-height:100%;object-fit:contain;"></div>
+    </div>
     </div>
   </div>
 </section>
@@ -881,7 +359,7 @@ footer {
 
     <div class="don-card">
       <div class="don-img-wrap">
-        <img src="photo_web/Photo-1.webp" alt="Membres actifs">
+        <img loading="lazy" src="photo_web/Photo-1.webp" alt="Membres actifs">
       </div>
       <h3>Membres actifs</h3>
       <p>En adhérant à notre association, vous rejoignez une communauté engagée dans l'environnement et l'humanitaire et partagez ainsi nos valeurs et notre vision.</p>
@@ -891,7 +369,7 @@ footer {
 
     <div class="don-card">
       <div class="don-img-wrap">
-        <img src="photo_web/Photo-2.webp" alt="Opération Dico-Dibandi">
+        <img loading="lazy" src="photo_web/Photo-2.webp" alt="Opération Dico-Dibandi">
       </div>
       <h3>Des dictionnaires pour Dibandi</h3>
       <p>Nous collectons des dictionnaires de français occasions ou neufs, de niveau primaire, pour une école de village Pygmées à Dibandi dans le sud du Gabon.</p>
@@ -901,7 +379,7 @@ footer {
 
     <div class="don-card">
       <div class="don-img-wrap">
-        <img src="photo_web/Photo.webp" alt="Coaching slam poésie">
+        <img loading="lazy" src="photo_web/Photo.webp" alt="Coaching slam poésie">
       </div>
       <h3>Coaching slam poésie</h3>
       <p>Nos ateliers favorisent la communication et des échanges forts à travers des événements artistiques (slam, éloquence, poésie), tout en soutenant des projets humanitaires et environnementaux.</p>
@@ -921,43 +399,43 @@ footer {
     Disposition bento fidèle au Figma :
     Rangée 1 : [petit] [petit] [large 2col]
     Rangée 2 : [large tall 1col] [large wide 2col] [petit] [petit]
-    Pour remplacer : mettre <img src="..." alt="..."> à l'intérieur de chaque .g
+    Pour remplacer : mettre <img loading="lazy" src="..." alt="..."> à l'intérieur de chaque .g
   -->
   <div class="gallery-grid">
     <div class="g" style="grid-column:1;grid-row:1;">
-      <img src="photo_web/Galerie photo-7.webp" alt="">
+      <img loading="lazy" src="photo_web/Galerie photo-7.webp" alt="">
 
     </div>
     <div class="g" style="grid-column:2;grid-row:1;">
-      <img src="photo_web/Galerie photo-8.webp" alt="">
+      <img loading="lazy" src="photo_web/Galerie photo-8.webp" alt="">
 
     </div>
     <div class="g" style="grid-column:3/span 2;grid-row:1;">
-      <img src="photo_web/Galerie photo-3.webp" alt="">
+      <img loading="lazy" src="photo_web/Galerie photo-3.webp" alt="">
 
     </div>
     <div class="g" style="grid-column:1;grid-row:2/span 1;">
-      <img src="photo_web/Galerie photo-2.webp" alt="">
+      <img loading="lazy" src="photo_web/Galerie photo-2.webp" alt="">
 
     </div>
     <div class="g" style="grid-column:2/span 2;grid-row:2;">
-      <img src="photo_web/Galerie photo-9.webp" alt="">
+      <img loading="lazy" src="photo_web/Galerie photo-9.webp" alt="">
 
     </div>
     <div class="g" style="grid-column:4;grid-row:2;">
-      <img src="photo_web/Galerie photo-4.webp" alt="">
+      <img loading="lazy" src="photo_web/Galerie photo-4.webp" alt="">
 
         </div>
     <div class="g" style="grid-column:1;grid-row:3/span 1;">
-      <img src="photo_web/Rectangle 8.webp" alt="">
+      <img loading="lazy" src="photo_web/Rectangle 8.webp" alt="">
 
     </div>
     <div class="g" style="grid-column:2/span 2;grid-row:3;">
-      <img src="photo_web/Galerie photo-1.webp" alt="">
+      <img loading="lazy" src="photo_web/Galerie photo-1.webp" alt="">
 
     </div>
     <div class="g" style="grid-column:4;grid-row:3;">
-      <img src="photo_web/Galerie photo-5.webp" alt="">
+      <img loading="lazy" src="photo_web/Galerie photo-5.webp" alt="">
     </div>
   </div>
 </section>
@@ -974,7 +452,7 @@ footer {
       Un Cœur En Vert est un projet collectif qui grandit grâce aux rencontres et aux personnes engagées.
     </p>
 
-      <form action="https://formsubmit.co/alex.pelapratflore@gmail.com" method="POST">
+      <form action="https://formsubmit.co/uncoeurenvert@gmail.com" method="POST">
 
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="Nouveau message depuis le site">
@@ -1017,7 +495,7 @@ footer {
       </div>
       <div class="ci">
         <strong>Écrivez-nous</strong>
-        <a href="mailto:uncoeurenvert@gmail.com">uncoeurenvert@gmail.com</a><br>
+        <a href="/cdn-cgi/l/email-protection#89fce7eae6ecfcfbece7ffecfbfdc9eee4e8e0e5a7eae6e4"><span class="__cf_email__" data-cfemail="a6d3c8c5c9c3d3d4c3c8d0c3d4d2e6c1cbc7cfca88c5c9cb">[email&#160;protected]</span></a><br>
         <span>06 52 54 52 75</span>
       </div>
       <div class="ci">
@@ -1039,21 +517,21 @@ footer {
       <!-- ╔══════════════════════════════════════════╗
            ║  LOGO FOOTER — pour changer :           ║
            ║  Supprime le <svg> et décommente :      ║
-           ║  <img src="logo.png" alt="Un Cœur en Vert"> ║
+           ║  <img loading="lazy" src="logo.png" alt="Un Cœur en Vert"> ║
            ╚══════════════════════════════════════════╝ -->
       <div class="footer-logo-circle">
-        <img src="photo_web/logotrans.webp" alt="Un Cœur en Vert">
+        <img loading="lazy" src="photo_web/logotrans.webp" alt="Un Cœur en Vert">
       </div>
     </div>
 
     <!-- Colonne 2 : Description + Instagram -->
     <div class="footer-col-about">
       <p class="footer-about">
-        <strong style="color:var(--cream);">Un Cœur En Vert</strong>
+        <strong style="color:var(--cream);">Un Coeur En Vert</strong>
         Créer un véritable pont entre Angers et le Gabon, au service de l'humain, de la nature et de la solidarité.
       </p>
       <div class="footer-ig">
-        <img src="photo_web/Vector.webp" alt="instagram vert">
+        <img loading="lazy" src="photo_web/Vector.webp" alt="instagram vert">
       <div class="ci">
         <a href="https://instagram.com/un_coeur_en_vert" target="_blank" rel="noopener">@un_coeur_en_vert</a>
       </div>
@@ -1076,7 +554,8 @@ footer {
 <!-- ════════════════════════════════════
      SCRIPTS
 ════════════════════════════════════ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
 // Carousel event Foire de Paris
 let carouselIdx = 0;
 function carouselGo(idx) {
@@ -1124,6 +603,5 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 </script>
-
 </body>
 </html>
